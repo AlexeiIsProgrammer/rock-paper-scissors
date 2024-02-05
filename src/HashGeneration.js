@@ -13,20 +13,21 @@ export default class HashGeneration {
     this._key = crypto.randomBytes(256);
   }
 
-  generateHMAC(computerMove) {
-    this._hmac = crypto.createHmac("sha256", this._key).update(computerMove).digest("hex");
+  generateHMAC(move) {
+    this.hmac = crypto.createHmac("sha256", this._key).update(move);
+    return this
   }
 
   get hmac() {
-    return this._hmac;
+    return this._hmac.digest("hex");
   }
 
   set hmac(value) {
-    this.hmac = value;
+    this._hmac = value;
   }
 
   get key() {
-    return this._key;
+    return this._key.toString('hex');
   }
 
   set key(value) {

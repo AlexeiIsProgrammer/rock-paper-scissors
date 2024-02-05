@@ -4,7 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "see": "node src/index.js 1 2 3",
+    "see-3": "node src/index.js rock scissors paper",
+    "see-5": "node src/index.js 1 2 3 4 5",
+    "see-7": "node src/index.js a b c d e f g",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
